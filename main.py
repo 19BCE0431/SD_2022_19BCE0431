@@ -100,15 +100,15 @@ def askuserB():
         indexB, posB = index_2d("B-"+charB)
         Bmove(indexB,posB,choiceB)
     elif(charB=='h2'):
-        Amove(indexB,posB,choiceB)
+        Bmove(indexB,posB,choiceB)
         indexB, posB = index_2d("B-"+charB)
-        Amove(indexB,posB,choiceB1)
+        Bmove(indexB,posB,choiceB1)
     elif(charB=='h3'):
         Bmove(indexB,posB,choiceB)
         indexB, posB = index_2d("B-"+charB)
         Bmove(indexB,posB,choiceB)
         indexB, posB = index_2d("B-"+charB)
-        Amove(indexB,posB,choiceB1)
+        Bmove(indexB,posB,choiceB1)
     else:
         Bmove(indexB,posB,choiceB)
     show_board()
