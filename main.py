@@ -95,7 +95,7 @@ def askuserB():
     moveB=input("Player B move: in format [<character-name>:<F/B/L/R]")
     charB,choiceB,choiceB1=moveB[0:2],moveB[3],moveB[-1]
     indexB, posB = index_2d("B-"+charB)
-    if(charB=='h2'):
+    if(charB=='h1'):
         Bmove(indexB,posB,choiceB)
         indexB, posB = index_2d("B-"+charB)
         Bmove(indexB,posB,choiceB)
