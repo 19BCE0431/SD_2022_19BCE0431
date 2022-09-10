@@ -1,67 +1,67 @@
-board = [['-' for i in range(5)] for i in range(5)]
+board = [[' -  ' for i in range(5)] for i in range(5)]
 def show_board():
     for i in board:
         print(i)
 show_board()
 
-playerA=input("Enter character names: ").split()
+playerA=input("player A, Enter character names: ").split()
 board[4]=["A-"+ i for i in playerA]
-playerB=input("Enter character names: ").split()
+playerB=input("player B, Enter character names: ").split()
 board[0]=["B-"+ i for i in playerB]
 show_board()
 
 def Amove(index,pos,choice):
      if choice=='L' and pos>0 and board[index][pos-1][0]!='A':
          if board[index][pos-1][0]=='B':
-             board[index][pos],board[index][pos-1]='-',board[index][pos]
+             board[index][pos],board[index][pos-1]=' -  ',board[index][pos]
          else:
             board[index][pos],board[index][pos-1]=board[index][pos-1],board[index][pos]
      elif choice=='R' and pos<4 and board[index][pos+1][0]!='A':
          if board[index][pos+1][0]=='B':
-             board[index][pos],board[index][pos-1]='-',board[index][pos]
+             board[index][pos],board[index][pos-1]=' -  ',board[index][pos]
          else:
              board[index][pos],board[index][pos+1]=board[index][pos+1],board[index][pos]
      elif choice=='F' and index>0 and board[index-1][pos][0]!='A':
          if board[index-1][pos][0]=='B':
-             board[index][pos],board[index-1][pos]='-',board[index][pos]
+             board[index][pos],board[index-1][pos]=' -  ',board[index][pos]
          else:
              board[index][pos],board[index-1][pos]=board[index-1][pos],board[index][pos]
      elif choice=='B' and index<4 and board[index+1][pos][0]!='A':
          if board[index+1][pos][0]=='B':
-             board[index][pos],board[index+1][pos]='-',board[index][pos]
+             board[index][pos],board[index+1][pos]=' -  ',board[index][pos]
          else:
              board[index][pos],board[index+1][pos]=board[index+1][pos],board[index][pos]
      else:
          return "Enter valid move"
 
 def Bmove(index,pos,choice):
-    if choice=='R' and pos>0 and board[index][pos-1][0]!='A':
+    if choice=='R' and pos>0 and board[index][pos-1][0]!='B':
         if board[index][pos-1][0]=='A':
-            board[index][pos],board[index][pos-1]='-',board[index][pos]
+            board[index][pos],board[index][pos-1]=' -  ',board[index][pos]
         else:
             board[index][pos],board[index][pos-1]=board[index][pos-1],board[index][pos]
-    elif choice=='L' and pos<4 and board[index][pos+1][0]!='A':
+    elif choice=='L' and pos<4 and board[index][pos+1][0]!='B':
         if board[index][pos+1][0]=='A':
-            board[index][pos],board[index][pos-1]='-',board[index][pos]
+            board[index][pos],board[index][pos-1]=' -  ',board[index][pos]
         else:
             board[index][pos],board[index][pos+1]=board[index][pos+1],board[index][pos]
-    elif choice=='B' and index>0 and board[index-1][pos][0]!='A':
+    elif choice=='B' and index>0 and board[index-1][pos][0]!='B':
         if board[index-1][pos][0]=='A':
-            board[index][pos],board[index-1][pos]='-',board[index][pos]
+            board[index][pos],board[index-1][pos]=' -  ',board[index][pos]
         else:
             board[index][pos],board[index-1][pos]=board[index-1][pos],board[index][pos]
-    elif choice=='F' and index<4 and board[index+1][pos][0]!='A':
+    elif choice=='F' and index<4 and board[index+1][pos][0]!='B':
         if board[index+1][pos][0]=='A':
-            board[index][pos],board[index+1][pos]='-',board[index][pos]
+            board[index][pos],board[index+1][pos]=' -  ',board[index][pos]
         else:
             board[index][pos],board[index+1][pos]=board[index+1][pos],board[index][pos]
     else:
         return "Enter valid move"
 
-def index_2d(charA):
+def index_2d(char):
     for i, x in enumerate(board):
-        if charA in x:
-            return (int(i), int(x.index(charA)))
+        if char in x:
+            return (int(i), int(x.index(char)))
 
 # for i,x in enumerate(board):
 #     print(i,x)
