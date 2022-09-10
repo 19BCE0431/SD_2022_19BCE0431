@@ -35,23 +35,23 @@ def Amove(index,pos,choice):
          return "Enter valid move"
 
 def Bmove(index,pos,choice):
-    if choice=='L' and pos>0 and board[index][pos-1][0]!='A':
-        if board[index][pos-1][0]=='B':
+    if choice=='R' and pos>0 and board[index][pos-1][0]!='A':
+        if board[index][pos-1][0]=='A':
             board[index][pos],board[index][pos-1]='-',board[index][pos]
         else:
             board[index][pos],board[index][pos-1]=board[index][pos-1],board[index][pos]
-    elif choice=='R' and pos<4 and board[index][pos+1][0]!='A':
-        if board[index][pos+1][0]=='B':
+    elif choice=='L' and pos<4 and board[index][pos+1][0]!='A':
+        if board[index][pos+1][0]=='A':
             board[index][pos],board[index][pos-1]='-',board[index][pos]
         else:
             board[index][pos],board[index][pos+1]=board[index][pos+1],board[index][pos]
     elif choice=='B' and index>0 and board[index-1][pos][0]!='A':
-        if board[index-1][pos][0]=='B':
+        if board[index-1][pos][0]=='A':
             board[index][pos],board[index-1][pos]='-',board[index][pos]
         else:
             board[index][pos],board[index-1][pos]=board[index-1][pos],board[index][pos]
     elif choice=='F' and index<4 and board[index+1][pos][0]!='A':
-        if board[index+1][pos][0]=='B':
+        if board[index+1][pos][0]=='A':
             board[index][pos],board[index+1][pos]='-',board[index][pos]
         else:
             board[index][pos],board[index+1][pos]=board[index+1][pos],board[index][pos]
